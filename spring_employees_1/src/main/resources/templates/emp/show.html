@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pl" xmlns:th="http://www.w3.org/1999/xhtml" xmlns:form="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Show Text</title>
+</head>
+<body>
+<hr>
+<div class="container">
+    <h2>Nice to meet you</h2>
+    <div>
+
+        <form action="#" th:action="@{/show_text}" th:object="${emp}" method="post">
+            <input type="text" value="Hello, Dear User"> <br>
+
+        </form>
+        <hr>
+    </div>
+</div>
+</body>
+</html>

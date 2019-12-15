@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pl" xmlns:th="http://www.w3.org/1999/xhtml" xmlns:form="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>All Employees List</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body bgcolor="#99CC66">
+
+<div class="container">
+
+    <div class="row">
+        <div id="title">
+            <h1>Employees List</h1>
+        </div>
+        <table>
+            <thead>
+            <tr>
+                <th>id</th>
+                <th>Name</th>
+                <th>Salary</th>
+                <th>Designation</th>
+                <th>Action</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr data-th-each="emp : ${list}">
+                <td th:text="${emp.id}"></td>
+                <td th:text="${emp.name}"></td>
+                <td th:text="${emp.salary}"></td>
+                <td th:text="${emp.designation}"></td>
+
+                <td>
+                    <form method="post" th:action="@{/delete_emp}">
+                        <input type="hidden" th:name="emp_id" th:value="${emp.id}">
+                        <input type="submit" value="Delete" >
+                    </form>
+                    <form method="post" th:action="@{/edit_emp}">
+                        <input type="hidden" th:name="emp_id" th:value="${emp.id}">
+                        <input type="submit" value="Edit">
+                    </form>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+
+        <!--        <form action="#" th:action="@{/view" th:object="${view}">-->
+        <!--&lt;!&ndash;            <button  th:field="*{view}"  /button>&ndash;&gt;-->
+        <!--            <button th:field="*{view}" />-->
+
+        <!--        </form>-->
+
+        <form action="#" th:action="@{/show_text}" th:object="${emp}" method="post">
+            <!--            <input type="text" placeholder="First Name" />-->
+            <input type="submit" value="Click me"/>
+        </form>
+
+
+    </div>
+</div>
+</body>
+</html>

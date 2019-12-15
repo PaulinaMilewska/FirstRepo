@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pl" xmlns:th="http://www.w3.org/1999/xhtml" xmlns:form="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Delete emp</title>
+</head>
+<body>
+<form action="#" th:action="@{/delete}" th:object="${emp}" method="delete">
+<tr data-th-each="emp : ${list}">
+    <td th:text="${emp.id}"></td>
+    <td th:text="${emp.name}"></td>
+    <td th:text="${emp.salary}"></td>
+    <td th:text="${emp.designation}"></td>
+
+    <td>
+        <input type="submit" th:value="Delete">
+        <input type="submit" th:value="Edit">
+    </td>
+
+</tr>
+
+</body>
+</html>

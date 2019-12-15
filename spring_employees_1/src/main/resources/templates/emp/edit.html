@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="pl" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit form</title>
+</head>
+<body>
+<hr>
+<div class="container">
+    <h2>Employee Form</h2>
+    <div>
+        <form action="#" th:action="@{/process}" th:object="${emp}" method="post">
+            <input type="text" th:field="*{bar}" />
+            <input type="submit" />
+        </form>
+        <hr>
+    </div>
+</div>
+</body>
+</html>
