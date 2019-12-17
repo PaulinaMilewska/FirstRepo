@@ -35,7 +35,7 @@ public class EmailExecutor {
             );
             message.setSubject("Testing");
             message.setText("Witam,"
-                    + "\n\n Tutaj jest mail testowy");
+                    + "\n\n Tutaj mail testowy");
 
             Transport.send(message);
 
